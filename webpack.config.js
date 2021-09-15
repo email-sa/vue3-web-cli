@@ -56,7 +56,7 @@ module.exports = {
     ],
     devServer: {
         compress: true, // 启用gzip压缩
-        port: 8088,
+        port: 8090,
         open: true // 打开浏览器
     }
 };

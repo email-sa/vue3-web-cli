@@ -17,3 +17,15 @@
 项目是由 vue-cli 的 vue3 模板生成的
 
 引入 webpack ，使用 webpack 构建项目，替换原有的 vue-cli-service
+
+安装依赖
+
+```
+npm install
+```
+
+webpack 的配置变化
+
+-   vue-loader@next 安装指定版本
+-   VueLoaderPlugin 的导入方式改变了
+-   新增了 @vue/compiler-sfc 替换原来的 vue-template-compiler
