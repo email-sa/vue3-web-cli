@@ -4,12 +4,18 @@
     "private": true,
     "scripts": {
         "dev": "webpack serve",
-        "build": "vue-cli-service build",
+        "build": "webpack",
         "lint": "vue-cli-service lint"
+    },
+    "gitHooks": {
+        "pre-commit": "lint-staged",
+        "commit-msg": "node scripts/verifyCommit.js"
     },
     "dependencies": {
         "core-js": "^3.6.5",
-        "vue": "^3.0.0"
+        "vue": "^3.0.0",
+        "vue-router": "^4.0.11",
+        "vuex": "^4.0.2"
     },
     "devDependencies": {
         "@vue/cli-plugin-babel": "~4.5.0",
@@ -21,7 +27,9 @@
         "css-loader": "^6.2.0",
         "eslint": "^6.7.2",
         "eslint-plugin-vue": "^7.0.0",
+        "friendly-errors-webpack-plugin": "^1.7.0",
         "html-webpack-plugin": "^5.3.2",
+        "husky": "^7.0.2",
         "style-loader": "^3.2.1",
         "vue-loader": "^16.5.0",
         "webpack": "^5.52.1",
