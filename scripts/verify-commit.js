@@ -8,22 +8,22 @@ const commitRE = /^(revert: )?(feat|fix|docs|dx|style|refactor|perf|test|workflo
 
 console.log("*", commitRE.test(msg), msg);
 if (!commitRE.test(msg)) {
-  // console.error(`
-  //     不合法的 commit 消息格式。
-  //     请查看 git commit 提交规范：https://github.com/woai3c/Front-end-articles/blob/master/git%20commit%20style.md
-  // `);
-  console.error(
-    `  ${chalk.bgRed.white(" ERROR ")} ${chalk.red(
-      `invalid commit message format.`
-    )}\n\n` +
-      chalk.red(
-        `  Proper commit message format is required for automated changelog generation. Examples:\n\n`
-      ) +
-      `    ${chalk.green(`feat(compiler): add 'comments' option`)}\n` +
-      `    ${chalk.green(
-        `fix(v-model): handle events on blur (close #28)`
-      )}\n\n` +
-      chalk.red(`  See .github/commit-convention.md for more details.\n`)
-  );
+  console.error(`
+      不合法的 commit 消息格式。
+      请查看 git commit 提交规范：https://github.com/woai3c/Front-end-articles/blob/master/git%20commit%20style.md
+  `);
+  //   console.error(
+  //     `  ${chalk.bgRed.white(" ERROR ")} ${chalk.red(
+  //       `invalid commit message format.`
+  //     )}\n\n` +
+  //       chalk.red(
+  //         `  Proper commit message format is required for automated changelog generation. Examples:\n\n`
+  //       ) +
+  //       `    ${chalk.green(`feat(compiler): add 'comments' option`)}\n` +
+  //       `    ${chalk.green(
+  //         `fix(v-model): handle events on blur (close #28)`
+  //       )}\n\n` +
+  //       chalk.red(`  See .github/commit-convention.md for more details.\n`)
+  //   );
   process.exit(1);
 }
