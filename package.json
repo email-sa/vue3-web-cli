@@ -9,7 +9,16 @@
     },
     "gitHooks": {
         "pre-commit": "lint-staged",
-        "commit-msg": "node scripts/verifyCommit.js"
+        "commit-msg": "node scripts/verify-commit.js"
+    },
+    "lint-staged": {
+        "*.js": [
+            "prettier --write"
+        ],
+        "*.ts?(x)": [
+            "eslint",
+            "prettier --parser=typescript --write"
+        ]
     },
     "dependencies": {
         "core-js": "^3.6.5",
@@ -30,11 +39,12 @@
         "friendly-errors-webpack-plugin": "^1.7.0",
         "html-webpack-plugin": "^5.3.2",
         "husky": "^7.0.2",
+        "lint-staged": "^11.1.2",
         "style-loader": "^3.2.1",
         "vue-loader": "^16.5.0",
         "webpack": "^5.52.1",
         "webpack-cli": "^4.8.0",
-        "webpack-dev-server": "^4.2.1"
+        "webpack-dev-server": "^3.11.2"
     },
     "eslintConfig": {
         "root": true,
